@@ -29,12 +29,12 @@ public class ClienteController {
 	public String crear(Map<String, Object> model) {
 		Cliente cliente = new Cliente();
 		model.put("cliente", cliente);
-		model.put("titulo", "Ingresar cliente");
+		model.put("titulo", "Formulario cliente");
 		return "form";
 	}
 	
 	
-	@RequestMapping(value="/formm", method = RequestMethod.POST)
+	@RequestMapping(value="/form", method = RequestMethod.POST)
 	public String guardar(Cliente cliente) {
 		clienteDao.save(cliente);
 		return "redirect:listar";
